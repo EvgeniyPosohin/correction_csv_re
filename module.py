@@ -35,9 +35,9 @@ class Phonebook:
     def chek_name(self, item: list):
         for items in self.new_contact:
             if item[0] == items[0] and item[1] == items[1]:
-                for i, _ in enumerate(items):
+                for id, _ in enumerate(items):
                     if len(str(_)) <= 1:
-                        items[i] = item[i]
+                        items[id] = item[id-1]
                 return
         else:
             self.new_contact.append(item)
@@ -60,3 +60,4 @@ class Phonebook:
             self.correct_name(item)
             self.correct_phone(item)
             self.chek_name(item)
+
